@@ -55,6 +55,30 @@ const rankBoostingPrices = [
   },
 ];
 
+// Anda bisa letakkan ini di atas komponen Anda
+const specialPackages = [
+  {
+    title: "Epic ➔ Mythic",
+    price: "Rp 200.000",
+    description: "Joki dari rank Epic V hingga Mythic Placement.",
+  },
+  {
+    title: "Mythic Grading",
+    price: "Rp 150.000",
+    description: "Menaikkan poin grading awal season Anda.",
+  },
+  {
+    title: "Mythic (15★) ➔ M. Honor",
+    price: "Rp 120.000",
+    description:
+      "Push rank dari Mythic 15 Bintang ke Mythic Honor (25 Bintang).",
+  },
+  {
+    title: "M. Honor ➔ M. Glory",
+    price: "Rp 300.000",
+    description: "Joki dari Mythic Honor ke Mythic Glory (50 Bintang).",
+  },
+];
 export default function HomePage() {
   const features = [
     {
@@ -125,7 +149,7 @@ export default function HomePage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4"
               >
                 <Link
-                  href="https://wa.me/628151899318?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20joki%20rank%20dari%20AMZZYR%20STORE."
+                  href="https://wa.me/6285791769602?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20joki%20rank%20dari%20AMZZYR%20STORE."
                   target="_blank"
                 >
                   Pesan Joki Sekarang
@@ -206,6 +230,129 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <section className="py-20 bg-muted/30" id="special-packages">
+        <div className="container mx-auto px-4">
+          {/* Kontainer utama yang membagi layout menjadi 2 kolom di layar besar */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* ===== SISI KIRI: DESKRIPSI & JUDUL ===== */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center lg:text-left"
+            >
+              <div className="space-y-4">
+                <h2 className="text-3xl lg:text-4xl font-bold text-balance">
+                  Paket Joki Spesial AMZZYR STORE
+                </h2>
+                <p className="text-xl text-muted-foreground text-pretty">
+                  Dengan paket borongan, Anda mendapatkan harga yang jauh lebih
+                  hemat dan proses push rank yang terjamin dari awal hingga
+                  akhir.
+                </p>
+                <p className="text-muted-foreground text-pretty">
+                  Fokus saja bermain dan bersenang-senang, biar kami yang urus
+                  rank Anda sampai tujuan. Pilih paket yang paling sesuai di
+                  samping ini.
+                </p>
+                <div className="pt-4">
+                  <Button asChild size="lg">
+                    <Link
+                      href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20mau%20tanya-tanya%20soal%20paket%20joki."
+                      target="_blank"
+                    >
+                      Tanya Admin
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ===== SISI KANAN: KARTU HARGA ===== */}
+            <div className="space-y-8">
+              {/* Grid untuk paket individual */}
+              <div className="grid sm:grid-cols-2 gap-6">
+                {specialPackages.map((item, index) => {
+                  const message = `Halo AMZZYR STORE, saya tertarik dengan Paket Spesial: ${item.title}.`;
+                  const encodedMessage = encodeURIComponent(message);
+                  const whatsappLink = `https://wa.me/6285791769602?text=${encodedMessage}`;
+
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Card className="h-full text-center hover:shadow-primary/20 hover:shadow-lg transition-shadow">
+                        <CardHeader>
+                          <CardTitle className="text-lg font-bold">
+                            {item.title}
+                          </CardTitle>
+                          <p className="text-xl font-bold text-primary pt-1">
+                            {item.price}
+                          </p>
+                        </CardHeader>
+                        <CardContent className="flex flex-col justify-between h-full p-4 pt-0">
+                          <p className="text-muted-foreground text-sm mb-4">
+                            {item.description}
+                          </p>
+                          <Button asChild size="sm" className="w-full mt-auto">
+                            <Link href={whatsappLink} target="_blank">
+                              Pesan Paket
+                            </Link>
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  );
+                })}
+              </div>
+
+              {/* Kartu untuk Paket Total */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Card className="relative text-center border-2 border-primary shadow-xl bg-background">
+                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+                    Paket Terlengkap
+                  </Badge>
+                  <CardHeader>
+                    <CardTitle className="text-xl font-bold">
+                      PAKET BORONGAN: Epic ➔ Mythic Glory
+                    </CardTitle>
+                    <p className="text-muted-foreground text-sm">
+                      Semua paket di atas dalam satu harga spesial!
+                    </p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-4xl font-bold text-primary">
+                      Rp 770.000
+                    </p>
+                    <Button
+                      asChild
+                      size="lg"
+                      className="w-full max-w-xs mx-auto"
+                    >
+                      <Link
+                        href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20saya%20mau%20ambil%20Paket%20Borongan%20Rp%20770.000."
+                        target="_blank"
+                      >
+                        Ambil Paket Borongan
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Services Section */}
       <section className="py-20" id="pricing">
         <div className="container mx-auto px-4">
@@ -217,11 +364,11 @@ export default function HomePage() {
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-balance">
-              Paket Joki Rank AMZZYR STORE
+              Daftar Harga Joki Per Bintang
             </h2>
             <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-              Pilih paket joki rank sesuai kebutuhan Anda untuk push rank awal
-              season bersama pro player kami.
+              Harga transparan dan terjangkau untuk setiap bintang yang Anda
+              butuhkan. Cocok untuk Anda yang ingin naik rank secara bertahap.
             </p>
           </motion.div>
 
@@ -234,16 +381,9 @@ export default function HomePage() {
           >
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {rankBoostingPrices.map((item, index) => {
-                // --- PERUBAHAN UTAMA DIMULAI DI SINI ---
-                // 1. Buat pesan dinamis berdasarkan rank yang dipilih
                 const message = `Halo AMZZYR STORE, saya tertarik dengan paket joki rank: ${item.rank}.`;
-
-                // 2. Encode pesan agar formatnya benar untuk URL
                 const encodedMessage = encodeURIComponent(message);
-
-                // 3. Gabungkan menjadi satu link WhatsApp yang lengkap
-                const whatsappLink = `https://wa.me/6282111793609?text=${encodedMessage}`;
-                // --- PERUBAHAN UTAMA SELESAI DI SINI ---
+                const whatsappLink = `https://wa.me/6285791769602?text=${encodedMessage}`;
 
                 return (
                   <motion.div
@@ -293,7 +433,6 @@ export default function HomePage() {
                           asChild
                           className="w-full bg-primary hover:bg-primary/90"
                         >
-                          {/* 4. Gunakan link dinamis yang sudah kita buat */}
                           <Link href={whatsappLink} target="_blank">
                             Pesan Sekarang
                           </Link>
@@ -332,7 +471,7 @@ export default function HomePage() {
                 className="bg-white text-primary hover:bg-white/90"
               >
                 {/* Mengarahkan ke WhatsApp yang benar */}
-                <Link href="https://wa.me/6282111793609?text=Halo%20AMZZYR%20STORE,%20saya%20tertarik%20dengan%20layanan%20joki%20rank.">
+                <Link href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20saya%20tertarik%20dengan%20layanan%20joki%20rank.">
                   Pesan Joki Sekarang
                 </Link>
               </Button>

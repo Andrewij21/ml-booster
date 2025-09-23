@@ -59,36 +59,6 @@ const validateToken = async (token: string) => {
 };
 
 export async function middleware(request: NextRequest) {
-  const protectedRoutes = getProtectedRoutes();
-  const { pathname } = request.nextUrl;
-  const sessionToken = request.cookies.get("session_token")?.value;
-  const user = sessionToken ? await validateToken(sessionToken) : false;
-  const isValidToken = !!user;
-  const userRole = user ? user.role : null;
-
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
-  );
-  if (isProtectedRoute && !isValidToken) {
-    const redirectUrl = new URL("/login", request.url);
-    redirectUrl.searchParams.set("redirect", pathname);
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  if (!isProtectedRoute && isValidToken) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
-  // if (pathname === "/")
-  // return NextResponse.redirect(new URL("/dashboard", request.url));
-  if (isProtectedRoute && isValidToken) {
-    const requiredRoles = getRequiredRoles(pathname);
-    const hasRequiredRole = requiredRoles && requiredRoles.includes(userRole);
-    if (!hasRequiredRole) {
-      return NextResponse.redirect(new URL("/unauthorized", request.url));
-    }
-  }
-
   return NextResponse.next();
 }
 
