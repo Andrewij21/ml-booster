@@ -43,7 +43,7 @@ const rankBoostingPrices = [
   },
   {
     rank: "MYTHIC HONOR",
-    price: "Rp 11.000",
+    price: "Rp 12.000",
     time: "Harga per Bintang",
     popular: false,
   },
@@ -332,7 +332,7 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-4xl font-bold text-primary">
-                      Rp 770.000
+                      Rp 750.000
                     </p>
                     <Button
                       asChild
