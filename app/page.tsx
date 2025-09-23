@@ -37,7 +37,7 @@ const rankBoostingPrices = [
   },
   {
     rank: "MYTHIC",
-    price: "Rp 9.000",
+    price: "Rp 10.000",
     time: "Harga per Bintang",
     popular: true, // Kita tandai sebagai populer
   },
