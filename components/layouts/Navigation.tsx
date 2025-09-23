@@ -45,11 +45,17 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              asChild
+            >
+              <Link
+                href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20mau%20tanya-tanya%20soal%20paket%20joki."
+                target="_blank"
+              >
                 Contact
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}

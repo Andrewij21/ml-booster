@@ -256,7 +256,7 @@ export default function HomePage() {
                   rank Anda sampai tujuan. Pilih paket yang paling sesuai di
                   samping ini.
                 </p>
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <Button asChild size="lg">
                     <Link
                       href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20mau%20tanya-tanya%20soal%20paket%20joki."
@@ -265,7 +265,7 @@ export default function HomePage() {
                       Tanya Admin
                     </Link>
                   </Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
 
