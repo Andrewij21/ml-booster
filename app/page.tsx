@@ -149,7 +149,7 @@ export default function HomePage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 py-4"
               >
                 <Link
-                  href="https://wa.me/6285791769602?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20joki%20rank%20dari%20AMZZYR%20STORE."
+                  href="https://wa.me/628151899318?text=Halo%2C%20saya%20tertarik%20dengan%20layanan%20joki%20rank%20dari%20AMZZYR%20STORE."
                   target="_blank"
                 >
                   Pesan Joki Sekarang
@@ -276,7 +276,7 @@ export default function HomePage() {
                 {specialPackages.map((item, index) => {
                   const message = `Halo AMZZYR STORE, saya tertarik dengan Paket Spesial: ${item.title}.`;
                   const encodedMessage = encodeURIComponent(message);
-                  const whatsappLink = `https://wa.me/6285791769602?text=${encodedMessage}`;
+                  const whatsappLink = `https://wa.me/628151899318?text=${encodedMessage}`;
 
                   return (
                     <motion.div
@@ -340,7 +340,7 @@ export default function HomePage() {
                       className="w-full max-w-xs mx-auto"
                     >
                       <Link
-                        href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20saya%20mau%20ambil%20Paket%20Borongan%20Rp%20770.000."
+                        href="https://wa.me/628151899318?text=Halo%20AMZZYR%20STORE,%20saya%20mau%20ambil%20Paket%20Borongan%20Rp%20770.000."
                         target="_blank"
                       >
                         Ambil Paket Borongan
@@ -383,7 +383,7 @@ export default function HomePage() {
               {rankBoostingPrices.map((item, index) => {
                 const message = `Halo AMZZYR STORE, saya tertarik dengan paket joki rank: ${item.rank}.`;
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappLink = `https://wa.me/6285791769602?text=${encodedMessage}`;
+                const whatsappLink = `https://wa.me/628151899318?text=${encodedMessage}`;
 
                 return (
                   <motion.div
@@ -471,7 +471,7 @@ export default function HomePage() {
                 className="bg-white text-primary hover:bg-white/90"
               >
                 {/* Mengarahkan ke WhatsApp yang benar */}
-                <Link href="https://wa.me/6285791769602?text=Halo%20AMZZYR%20STORE,%20saya%20tertarik%20dengan%20layanan%20joki%20rank.">
+                <Link href="https://wa.me/628151899318?text=Halo%20AMZZYR%20STORE,%20saya%20tertarik%20dengan%20layanan%20joki%20rank.">
                   Pesan Joki Sekarang
                 </Link>
               </Button>
